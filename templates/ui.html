@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ESP32-CAM Stream</title>
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #31302e;
+            color: white;
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav li {
+            margin: 20px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        nav a:hover, nav a:focus {
+            background-color: #575757;
+            transform: translateX(10px);
+        }
+        .main-content {
+            margin-left: 300px;
+            padding: 20px;
+        }
+        header.feature-box.top {
+            background-color: rgb(46, 45, 45);
+            height: 100px;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #575757;
+        }
+        header.feature-box.second {
+            background-color: rgb(140, 140, 165);
+            height: 50px;
+            text-align: center;
+            margin-top: -25px;
+            border-bottom: 3px solid #575757;
+        }
+        .video-container {
+            background-color: black;
+            width: 640px;
+            height: 480px;
+            border-radius: 35px;
+            object-fit: contain;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .video-container img {
+            width: 640px;
+            height: 480px;
+            border-radius: 35px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/home">Inicio</a></li>
+                <li><a href="/FrontPage">Video</a></li>
+                <li><a href="/webcam">ESP32-CAM</a></li>
+                <li><a href="/webcam">Configuracion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <section class="video-container">
+            <img src="{{ url_for('webapp') }}" alt="Upload video">
+        </section>
+    </div>
+</body>
+</html>
